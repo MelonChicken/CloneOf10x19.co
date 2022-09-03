@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+body {
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+  height: 100vh;
+  background-color: rgb(0, 0, 128);
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr;
+  gap: 0.5vh;
+}
+
+.top,
+.bottom,
+.main {
+  grid-row: span 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(0, 0, 128);
+  gap: 0.5vh;
+}
+
+.bottom #banner:nth-child(2) {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.bottom #banner:nth-child(2) p {
+  width: max-content;
+  font-weight: bold;
+  animation-name: marquee;
+  animation-delay: -7s;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.bottom #banner:nth-child(2) p:hover {
+  animation-play-state: paused;
+}
+
+.main .leftBox,
+.main .rightBox {
+  grid-column: span 1;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0.5vh;
+}
+
+#box {
+  grid-row: span 1;
+  grid-column: span 1;
+  font-size: 2em;
+}
+
+#banner {
+  grid-column: span 1;
+  font-size: 2em;
+}
+
+#banner,
+#box {
+  background-color: white;
+  color: rgb(0, 0, 128);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#picBox {
+  grid-column: span 1;
+  background-image: url(./imgs/img01.jpg);
+  background-size: cover;
+}
+
+#box:hover {
+  background-color: rgb(0, 0, 128);
+  color: white;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
